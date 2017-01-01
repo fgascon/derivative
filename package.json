@@ -1,0 +1,21 @@
+{
+  "name": "derivative",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fgascon/derivative.git"
+  },
+  "keywords": [
+    "reactive",
+    "functional",
+    "state"
+  ],
+  "author": "fgascon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fgascon/derivative/issues"
+  },
+  "homepage": "https://github.com/fgascon/derivative#readme"
+}
