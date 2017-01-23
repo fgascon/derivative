@@ -1,5 +1,5 @@
 'use strict';
-const List = require('immutable').List;
+const { List, Range } = require('immutable');
 const Derivative = require('./Derivative');
 
 class DerivativeList extends Derivative {
@@ -7,5 +7,9 @@ class DerivativeList extends Derivative {
         return List.isList(value) ? value : new List(value);
     }
 }
+
+DerivativeList.fromRange = function (start, end, step) {
+    return new DerivativeList([start, end, step], (start, end, step) => Range(start, end, step));
+};
 
 module.exports = DerivativeList;
