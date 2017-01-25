@@ -4,7 +4,8 @@
   "description": "Reactive functional state management",
   "main": "lib/index.js",
   "scripts": {
-    "compile": "babel src/ --out-dir lib/"
+    "compile": "babel src/ --out-dir lib/",
+    "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
