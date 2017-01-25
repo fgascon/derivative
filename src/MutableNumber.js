@@ -6,6 +6,10 @@ class MutableNumber extends Mutable {
         super(Number(initialValue));
     }
 
+    set (value) {
+        super.set(typeof value === 'number' ? value : Number(value));
+    }
+
     increment (value) {
         this.set(this.get() + (typeof value === 'undefined' ? 1 : value));
     }

@@ -6,6 +6,10 @@ class MutableBoolean extends Mutable {
         super(Boolean(initialValue));
     }
 
+    set (value) {
+        super.set(typeof value === 'boolean' ? value : Boolean(value));
+    }
+
     inverse () {
         this.set(!this.get());
     }

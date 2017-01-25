@@ -6,6 +6,10 @@ class MutableString extends Mutable {
         super(String(initialValue));
     }
 
+    set (value) {
+        super.set(typeof value === 'string' ? value : String(value));
+    }
+
     append (string) {
         this.set(this.get() + string);
     }

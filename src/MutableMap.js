@@ -11,6 +11,10 @@ class MutableMap extends Mutable {
         super(formattedValue);
     }
 
+    set (value) {
+        super.set(Map.isMap(value) ? value : new Map(value));
+    }
+
     //persistent changes
     setKey (key, value) {
         this.set(this.get().set(key, value));

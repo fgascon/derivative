@@ -11,6 +11,10 @@ class MutableList extends Mutable {
         super(formattedValue);
     }
 
+    set (value) {
+        super.set(List.isList(value) ? value : new List(value));
+    }
+
     //persistent changes
     setSize (size) {
         this.set(this.get().setSize(setSize));
