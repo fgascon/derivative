@@ -1,7 +1,30 @@
 'use strict';
+const Derivative = require('./Derivative');
+const DerivativeBoolean = require('./DerivativeBoolean');
 const DerivativeMap = require('./DerivativeMap');
 
 module.exports = {
+    //reading values
+    getKey: function (key, notSetValue) {
+        return new Derivative([this], (map) => map.get(key, notSetValue));
+    },
+
+    has: function (key) {
+        return new DerivativeBoolean([this], (map) => map.has(key));
+    },
+
+    includes: function (value) {
+        return new DerivativeBoolean([this], (map) => map.includes(value));
+    },
+
+    first: function () {
+        return new Derivative([this], (map) => map.first());
+    },
+
+    last: function () {
+        return new Derivative([this], (map) => map.last());
+    },
+
     //sequence algorithms
     map: function (mapper, context) {
         return new DerivativeMap([this], (map) => map.map(mapper, context));
